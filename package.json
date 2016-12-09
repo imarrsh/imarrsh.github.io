@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "My Personal Portfolio Site",
+  "main": "index.html",
+  "repository": "https://github.com/imarrsh/imarrsh.github.io",
+  "author": "Marshall Thompson <marshallthmomp@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "node-sass": "^3.13.0",
+    "postcss-cli": "^2.6.0",
+    "skeleton-sass-official": "^3.0.2"
+  },
+  "scripts": {
+    "html": "cp src/*html dist/",
+    "fonts": "cp -r src/fonts dist/fonts/",
+    "scss": "sass --style compressed --update src/scss:dist/css",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
+    "build:css": "yarn run scss && yarn run autoprefixer",
+    "build": "yarn run html && yarn run build:css"
+  },
+  "dependencies": {}
+}
