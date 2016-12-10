@@ -1,3 +1,6 @@
-'use strict';
+const $ = require('jquery');
 
-console.log('hello world!');
+// DOM ready
+$(function(){
+  console.log('hello world!!!');
+}())

@@ -9,12 +9,17 @@
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "browser-sync": "^2.18.2",
+    "browserify": "^13.1.1",
+    "browserify-shim": "^3.8.12",
     "concurrently": "^3.1.0",
     "imagemin-cli": "^3.0.0",
+    "jquery": "^3.1.1",
     "node-sass": "^3.13.0",
     "onchange": "^3.2.0",
     "postcss-cli": "^2.6.0",
     "skeleton-sass-official": "^3.0.2",
+    "strictify": "^0.2.0",
+    "uglify-js": "^2.7.5",
     "watchify": "^3.7.0"
   },
   "scripts": {
@@ -22,16 +27,33 @@
     "scss": "sass --style compressed --update src/scss:dist/css",
     "fonts": "cp -r src/fonts dist/fonts/",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
+    "browserify": "browserify src/js/index.js | uglifyjs -c > dist/js/bundle.js",
     "imagemin": "imagemin src/images --out-dir=dist/images",
+    "build:js": "yarn run browserify",
     "build:css": "yarn run scss && yarn run autoprefixer",
     "build:images": "yarn run imagemin",
-    "build": "yarn run html && yarn run build:css",
+    "build": "yarn run html && yarn run build:css && yarn run build:js && yarn run fonts && yarn run build:images",
     "watch:html": "onchange 'src/**/*.html' -- yarn run html",
+    "watch:js": "watchify src/js/index.js |  dist/js/bundle.js",
     "watch:scss": "sass --watch src/scss:dist/css",
     "watch:images": "onchange 'src/images/*' -- yarn run build:images",
     "watch:fonts": "onchange 'src/fonts/*' -- yarn run fonts",
     "sync": "browser-sync start --server 'dist' --files 'dist'",
-    "watch": "concurrently \"yarn run watch:html\" \"yarn run watch:scss\" \"yarn run watch:fonts\" \"yarn run watch:images\" \"yarn run sync\""
+    "watch": "concurrently 'yarn run watch:html' 'yarn run watch:js' 'yarn run watch:scss' 'yarn run watch:fonts' 'yarn run watch:images' 'yarn run sync'"
+  },
+  "browserify": {
+    "transform": [
+      "strictify",
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jQuery": "$"
+  },
+  "strictify": {
+    "exclude": [
+      "json"
+    ]
   },
   "dependencies": {}
 }
