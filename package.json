@@ -8,17 +8,30 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "concurrently": "^3.1.0",
+    "imagemin-cli": "^3.0.0",
     "node-sass": "^3.13.0",
+    "onchange": "^3.2.0",
     "postcss-cli": "^2.6.0",
-    "skeleton-sass-official": "^3.0.2"
+    "skeleton-sass-official": "^3.0.2",
+    "watchify": "^3.7.0"
   },
   "scripts": {
-    "html": "cp src/*html dist/",
-    "fonts": "cp -r src/fonts dist/fonts/",
+    "html": "cp src/*.html dist/",
     "scss": "sass --style compressed --update src/scss:dist/css",
+    "fonts": "cp -r src/fonts dist/fonts/",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
+    "imagemin": "imagemin src/images --out-dir=dist/images",
     "build:css": "yarn run scss && yarn run autoprefixer",
-    "build": "yarn run html && yarn run build:css"
+    "build:images": "yarn run imagemin",
+    "build": "yarn run html && yarn run build:css",
+    "watch:html": "onchange 'src/**/*.html' -- yarn run html",
+    "watch:scss": "sass --watch src/scss:dist/css",
+    "watch:images": "onchange 'src/images/*' -- yarn run build:images",
+    "watch:fonts": "onchange 'src/fonts/*' -- yarn run fonts",
+    "sync": "browser-sync start --server 'dist' --files 'dist'",
+    "watch": "concurrently \"yarn run watch:html\" \"yarn run watch:scss\" \"yarn run watch:fonts\" \"yarn run watch:images\" \"yarn run sync\""
   },
   "dependencies": {}
 }
