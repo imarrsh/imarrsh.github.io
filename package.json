@@ -41,7 +41,7 @@
     "build:css": "yarn run scss && yarn run autoprefixer",
     "build:images": "yarn run imagemin",
     "build": "yarn run html && yarn run build:css && yarn run build:js && yarn run fonts && yarn run build:images",
-    "deploy": "yarn run build && git-directory-deploy --directory dist/",
+    "deploy": "yarn run build && git-directory-deploy --directory dist/ --branch master",
     "watch:html": "onchange 'src/**/*.html' -- yarn run html",
     "watch:js": "watchify src/js/index.js -o dist/js/bundle.js",
     "watch:scss": "sass --watch src/scss:dist/css",
