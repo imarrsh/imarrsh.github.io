@@ -8,7 +8,7 @@
 @import "../../../node_modules/skeleton-sass-official/skeleton/themes/fresh/vars";
 
 // 4. import default theme overrides
-// @import "themes/demo/vars";
+@import "../variables";
 
 // 5. import default theme styles
 @import "../../../node_modules/skeleton-sass-official/skeleton/themes/fresh/base";
