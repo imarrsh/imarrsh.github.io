@@ -15,10 +15,10 @@ $(function(){
     , heroht = $('#top').height() // calc height of hero
     , wScroll = $(this).scrollTop(); // calc scoll distance
 
+    $navBar.removeClass('isFixed');
+
     if (heroht <= wScroll) {
       $navBar.addClass('isFixed');
-    } else {
-      $navBar.removeClass('isFixed');
     }
 
     console.log(heroht, wScroll);
