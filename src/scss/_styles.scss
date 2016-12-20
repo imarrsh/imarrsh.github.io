@@ -68,7 +68,8 @@ h4, h5, h6 {
     }
   }
 }
-.nav-content {
+
+.nav-header {
   position: relative;
 }
 
@@ -83,14 +84,18 @@ h4, h5, h6 {
   }
   .nav-links {
     list-style: none;
+    padding-top: 16px;
     li {
+      text-align: right;
+      display: block;
       // display: inline-block;
       &:last-child a {
-        padding-right: 0;
+        // padding-right: 0;
       }
     }
   }
   a {
+    display: inline-block;
     color: $main-color;
     font: {
       size: 18px;
@@ -101,7 +106,31 @@ h4, h5, h6 {
       decoration: none;
       transform: uppercase;
     }
-    padding: 0 16px;
+    // padding: 0 16px;
+    padding: 8px 0;
+  }
+}
+
+// nav media queries 
+@media only screen and (min-width: 768px) {
+  .mobile-menu{
+    display: none;
+  }
+  .nav-bar {
+    .nav-body {
+      display: block;
+    }
+    .nav-links {
+      li {
+        display: inline-block;
+        &:last-child a {
+          padding-right: 0;
+        }
+      }
+      a {
+        padding: 0 16px;
+      }
+    }
   }
 }
 
