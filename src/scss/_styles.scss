@@ -1,3 +1,4 @@
+
 body {
   background-color: $main-color;
 }
@@ -9,33 +10,145 @@ h4, h5, h6 {
   }
 }
 
-#coming-soon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: inline-block;
-  text-align: center;
-  .letter-mark {
-    &__wrap{
-      border-bottom: white 5px solid;
-      display: inline-block;      
+.hero {
+  height: calc(100vh - 56px);
+  background: {
+    color: white;
+    image: url('../images/train.jpg');
+    size: cover;
+    position: center center;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: {
+      color: #4d4d4d;
     }
   }
-  h1 {
-    padding: 0 5px;
-    display: inline-block;
-    font-size: 102px;
-    color: white;
-    margin: 0;
+}
+
+// ##################
+// nav bar elements
+// ##################
+.intitial-mark {
+  display: inline-block;
+  font: { 
+    size: 36px;
+    weight: 700;
   }
-  h3 {
-    font-size: 20px;
-    display: inline-block;
-    color: $main-color-light;
-    margin: 0;
-  }
-  .caption{
-    padding-top: 12px;
+  color: $main-color;
+}
+
+// mobile menu icon
+.mobile-menu {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  span {
+    float: right;
+    clear: both;
+    display: block;
+    background-color: $main-color;
+    height: 4px;
+    margin-bottom: 4px;
+    &:first-child {
+      width: 24px;
+    }
+    &:nth-child(2) {
+      width: 16px;
+    }
+    &:nth-child(3) {
+      width: 20px;
+      margin: 0;
+    }
   }
 }
+.nav-content {
+  position: relative;
+}
+
+.nav-bar {
+  position: relative;
+  min-height: 56px;
+  background: {
+    color: white;
+  }
+  .nav-body {
+    display: none;
+  }
+  .nav-links {
+    list-style: none;
+    li {
+      // display: inline-block;
+      &:last-child a {
+        padding-right: 0;
+      }
+    }
+  }
+  a {
+    color: $main-color;
+    font: {
+      size: 18px;
+      family: 'Biryani', Helvetica, sans-serif;
+      weight: 600;
+    }
+    text: {
+      decoration: none;
+      transform: uppercase;
+    }
+    padding: 0 16px;
+  }
+}
+
+// ############
+
+.section{
+  padding: 36px;
+  position: relative;
+}
+
+#about {
+  height: 1500px;
+}
+
+.isFixed {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+// #coming-soon {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   display: inline-block;
+//   text-align: center;
+//   .letter-mark {
+//     &__wrap{
+//       border-bottom: white 5px solid;
+//       display: inline-block;      
+//     }
+//   }
+//   h1 {
+//     padding: 0 5px;
+//     display: inline-block;
+//     font-size: 102px;
+//     color: white;
+//     margin: 0;
+//   }
+//   h3 {
+//     font-size: 20px;
+//     display: inline-block;
+//     color: $main-color-light;
+//     margin: 0;
+//   }
+//   .caption{
+//     padding-top: 12px;
+//   }
+// }

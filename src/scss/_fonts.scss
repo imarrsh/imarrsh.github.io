@@ -7,7 +7,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 100;
-  src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'), url(https://fonts.gstatic.com/s/robotoslab/v6/MEz38VLIFL-t46JUtkIEgNKT0E3VAiFQm6Fsw40EoXw.woff2) format('woff2');
+  src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'), url('.../fonts/roboto-slab/MEz38VLIFL-t46JUtkIEgNKT0E3VAiFQm6Fsw40EoXw.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin light */
@@ -15,7 +15,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 300;
-  src: local('Roboto Slab Light'), local('RobotoSlab-Light'), url(https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJdTIkQYohD4BpHvJ3NvbHoA.woff2) format('woff2');
+  src: local('Roboto Slab Light'), local('RobotoSlab-Light'), url('../fonts/roboto-slab/dazS1PrQQuCxC3iOAJFEJdTIkQYohD4BpHvJ3NvbHoA.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin regular */
@@ -23,7 +23,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url(https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zogp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'), url('../fonts/roboto-slab/y7lebkjgREBJK96VQi37Zogp9Q8gbYrhqGlRav_IXfk.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin bold */
@@ -31,6 +31,39 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 700;
-  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url(https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJf79_ZuUxCigM2DespTnFaw.woff2) format('woff2');
+  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'), url('../fonts/roboto-slab/dazS1PrQQuCxC3iOAJFEJf79_ZuUxCigM2DespTnFaw.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* ##############################
+ *  Biryani
+ * ############################## 
+ */
+/* light */
+@font-face {
+  font-family: 'Biryani';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Biryani Light'), local('Biryani-Light'), url('../fonts/biryani/e2qWBhmcwG_j1k44Tm68db3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
+}
+/* demi-bold */
+@font-face {
+  font-family: 'Biryani';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Biryani DemiBold'), local('Biryani-DemiBold'), url('../fonts/biryani/sudO3ui8h0hKk9hm4TaoQ73hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
+}
+/* bold */
+@font-face {
+  font-family: 'Biryani';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Biryani Bold'), local('Biryani-Bold'), url('../fonts/biryani/ZqfQVaAaPmtKNSJN4ziqsr3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
+}
+/* extra bold */
+@font-face {
+  font-family: 'Biryani';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Biryani ExtraBold'), local('Biryani-ExtraBold'), url('../fonts/biryani/cJ4Ij9Z_fMLiglmcqwLkf73hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
 }

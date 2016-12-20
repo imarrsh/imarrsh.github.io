@@ -37,7 +37,7 @@
     "cname": "cp CNAME dist/",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
     "browserify": "browserify src/js/index.js | uglifyjs > dist/js/bundle.js",
-    "imagemin": "imagemin src/images --out-dir=dist/images",
+    "imagemin": "imagemin src/images/* --out-dir=dist/images/",
     "build:js": "yarn run browserify",
     "build:css": "yarn run scss && yarn run autoprefixer",
     "build:images": "yarn run imagemin",
