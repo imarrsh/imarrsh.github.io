@@ -228,6 +228,43 @@ img {
   }
 }
 
+// ########################
+// work section
+// ########################
+
+
+
+
+// ########################
+// tech & tools section
+// ########################
+#tools {
+  .row .mobile-full {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+}
+.tool-belt-window {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; // iOS
+}
+
+.tool-belt {
+  width: 1600px;
+}
+
+.tool {
+  margin: 0 8px;
+  width: 120px;
+  display: inline-block;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+
 // #coming-soon {
 //   position: absolute;
 //   top: 50%;

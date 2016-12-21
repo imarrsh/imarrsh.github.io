@@ -24,4 +24,4 @@ $(function(){
     console.log(heroht, wScroll);
   })
 
-}())
+}());
