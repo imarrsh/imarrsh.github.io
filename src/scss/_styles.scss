@@ -334,6 +334,40 @@ img {
 // work section
 // ########################
 
+#work { // provide some stability for samples floating
+  .sample-image {
+    width: 100%;
+    height: 312px;
+    background: {
+      size: cover;
+      position: top center;
+    }
+  }
+  .sample {
+    position: relative;
+    width: 100%;
+    h3 {
+      margin-top: 320px;
+    }
+    @media screen and (min-width: 750px) {
+      float: left;
+      width: 50%;
+      h3 {
+        margin-top: 0px;
+      }
+    }
+    @media screen and (min-width: 1104px) {
+      width: 33.3333%;
+    }
+  }
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
 
 
 

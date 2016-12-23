@@ -1,4 +1,7 @@
 const $ = require('jquery');
+
+const Handlebars = require('handlebars');
+
 require('./tracking'); // require analytics
 
 // DOM ready
