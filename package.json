@@ -35,6 +35,7 @@
     "scss": "sass --style compressed --update src/scss:dist/css",
     "fonts": "cp -r src/fonts dist/",
     "cname": "cp CNAME dist/",
+    "video": "cp -r src/video/* dist/",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
     "browserify": "browserify src/js/index.js | uglifyjs > dist/js/bundle.js",
     "imagemin": "imagemin src/images/* --out-dir=dist/images/",
@@ -48,7 +49,7 @@
     "watch:scss": "sass --watch src/scss:dist/css",
     "watch:images": "onchange 'src/images/*' -- yarn run build:images",
     "watch:fonts": "onchange 'src/fonts/*' -- yarn run fonts",
-    "sync": "browser-sync start --server 'dist' --files 'dist'",
+    "sync": "browser-sync start --server 'dist' --files 'dist' --no-notify",
     "watch": "concurrently 'yarn run watch:html' 'yarn run watch:js' 'yarn run watch:scss' 'yarn run watch:fonts' 'yarn run watch:images' 'yarn run sync'"
   },
   "babel": {
