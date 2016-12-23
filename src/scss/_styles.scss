@@ -19,6 +19,7 @@ img {
 }
 
 .hero {
+  position: relative;
   height: calc(100vh - 56px);
   background: {
     color: white;
@@ -26,6 +27,7 @@ img {
     size: cover;
     position: center center;
   }
+  overflow: hidden;
   &::before {
     position: absolute;
     top: 0;
@@ -90,6 +92,7 @@ img {
     background-color: $main-color;
     height: 4px;
     margin-bottom: 4px;
+    transition: all 200ms ease-in-out;
     &:first-child {
       width: 24px;
     }
@@ -101,54 +104,94 @@ img {
       margin: 0;
     }
   }
+  &.menu-close {
+    span{
+      height: 2px;
+      margin-bottom: 6px;
+      &:first-child {
+        transform: rotate(-45deg);
+        transform-origin: top right;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        width: 24px;
+        transform: rotate(45deg);
+        transform-origin: bottom right;
+      }
+    }
+  }
 }
 
 .nav-header {
   position: relative;
 }
 
+.nav-bar__spacer {
+  position: relative;
+  min-height: 56px;
+  display: none;
+}
+
 .nav-bar {
   position: relative;
   min-height: 56px;
   z-index: 10;
-  .row {
-    margin-bottom: 0;
-  }
+  background-color: white;
   &.isFixed {
     box-shadow: 0px 5px 16px 0px transparentize($dark-gray, .9)
   }
-  background: {
-    color: white;
+  .row {
+    margin-bottom: 0; // take off the margin for this row
   }
   .nav-body {
-    display: none;
-  }
-  .nav-links {
-    list-style: none;
-    padding-top: 16px;
-    li {
-      text-align: right;
-      display: block;
-      // display: inline-block;
-      &:last-child a {
-        // padding-right: 0;
+    .nav-links {
+      list-style: none;
+      opacity: 0;
+      font-size: 0px;
+      padding: 0;
+      margin: 0;
+      transition: font-size 100ms ease-in-out 200ms,
+                  padding 100ms ease-in-out 200ms,
+                  margin 100ms ease-in-out 200ms,
+                  opacity 100ms ease-in-out;
+      li {
+        margin-bottom: 0;
+        text-align: right;
+        display: block;
+      }
+      a {
+        display: inline-block;
+        color: $main-color;
+        font: {
+          family: 'Biryani', Helvetica, sans-serif;
+          weight: 600;
+        }
+        text: {
+          decoration: none;
+          transform: uppercase;
+        }
+        padding: 0;
+        transition: padding 200ms ease-in-out 200ms;
       }
     }
-  }
-  a {
-    display: inline-block;
-    color: $main-color;
-    font: {
-      size: 18px;
-      family: 'Biryani', Helvetica, sans-serif;
-      weight: 600;
+    &.open {
+      .nav-links {
+        opacity: 1;
+        padding-top: 16px;
+        font-size: 18px;
+        padding: 8px 0;
+        transition: font-size 200ms ease-in-out,
+                    padding 200ms ease-in-out,
+                    margin 200ms ease-in-out,
+                    opacity 200ms ease-in-out 200ms;
+        a {
+          padding: 8px 0;
+          transition: padding 200ms ease-in-out;
+        }
+      }
     }
-    text: {
-      decoration: none;
-      transform: uppercase;
-    }
-    // padding: 0 16px;
-    padding: 8px 0;
   }
 }
 
@@ -158,18 +201,27 @@ img {
     display: none;
   }
   .nav-bar {
-    .nav-body {
-      display: block;
+    .nav-header {
+      float: left;
     }
-    .nav-links {
-      li {
-        display: inline-block;
-        &:last-child a {
-          padding-right: 0;
+    .nav-body {
+      float: right;
+      .nav-links {
+        transition: none;
+        opacity: 1;
+        font-size: 18px;
+        padding: 8px 0;
+        margin-top: 8px;
+        li {
+          display: inline-block;
+          &:last-child a {
+            padding-right: 0;
+          }
         }
-      }
-      a {
-        padding: 0 16px;
+        a {
+          // font-size: 18px;
+          padding: 0 16px;
+        }
       }
     }
   }
@@ -184,7 +236,7 @@ img {
   h1, h2, h3 {
     color: white;
   }
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background-color: white;
     color: $dark-gray;
     h1 {
@@ -192,13 +244,30 @@ img {
     }
   }
 }
+
 // ########################
 // about section
 // ########################
 
+.profile-info {
+  margin: 0;
+  figcaption a {
+    &:first-child {
+      margin-top: 24px;
+    }
+    margin-top: 16px;
+    text-align: center;
+    display: block;
+    svg {
+      width: 128px;
+    }
+  }
+}
+
 .avatar {
-  width: 200px;
-  height: 200px;
+  margin: 0 auto;
+  max-width: 200px;
+  max-height: 200px;
   box-shadow: 3px 3px 0px darken($main-color, 15%);
   transition: all 200ms ease-in-out;
   &:hover {
