@@ -342,17 +342,13 @@ img {
 // ########################
 
 #work { // provide some stability for samples floating
-
+  p {
+    font-weight: 300;
+  }
   .sample {
     position: relative;
     width: 100%;
-    @media screen and (min-width: 750px) {
-      float: left;
-      width: 50%;
-    }
-    @media screen and (min-width: 1104px) {
-      width: 33.3333%;
-    }
+    z-index: 2;
   }
   .sample-image {
     &::before {
@@ -361,34 +357,67 @@ img {
       position: absolute;
       top: 0;
       bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: transparentize($main-color, .35);
+      width: 100%;
+      background-color: transparentize($main-color, .2);
     }
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 312px;
     background: {
       size: cover;
       position: top center;
     }
+    filter: blur(5px);
   }
   .sample-info {
     text-align: center;
     padding: 2rem 3rem;
     width: 100%;
-    height: 100%;
+    height: 312px;
     position: relative;
   }
-  // ::after  #work
+  // ::after #work
   &::after {
     content: "";
     display: table;
     clear: both;
   }
+  @media screen and (min-width: 750px) {
+    .sample {
+      float: left;
+      width: 50%;
+      &:hover {
+        z-index: 1;
+        box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9);
+        .sample-image {
+          &::before {
+            opacity: 1;
+          }
+          filter: blur(5px);
+        }
+        .sample-info {
+          opacity: 1;
+        }
+      }
+    }
+    .sample-image {
+      &::before {
+        opacity: 0;
+      }
+      filter: none;
+    }
+    .sample-info {
+      opacity: 0;
+    }
+  }
+  @media screen and (min-width: 1104px) {
+    .sample {
+      width: 33.3333%;
+    }
+  }
 }
-
-
-
 
 
 // ########################
