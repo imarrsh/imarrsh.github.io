@@ -1,7 +1,4 @@
 const $ = require('jquery');
-
-const Handlebars = require('handlebars');
-
 require('./tracking'); // require analytics
 
 // DOM ready
@@ -22,7 +19,7 @@ $(function(){
     // check the href for id anchor - '#' 
     if ($href.indexOf('#') !== -1 ) {
       e.preventDefault();
-      
+
       if ($('.nav-body').hasClass('open')){
         $('.nav-body').removeClass('open');
       }
@@ -33,6 +30,17 @@ $(function(){
     }
 
   });
+
+  // function toolbeltWidth(){
+
+  // }
+
+  // const tools = document.querySelectorAll('.tool');
+  // const toolsWidth = Array.prototype.map.call(tools, el => {
+  //         return el.offsetWidth + 16;
+  //       }).reduce((total, x) => total + x, 0)
+
+  // console.log(tools, toolsWidth);
 
   //check scroll pos of menu bar and stick it
   $(window).scroll(function() {

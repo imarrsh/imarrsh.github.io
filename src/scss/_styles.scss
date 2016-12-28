@@ -303,6 +303,8 @@ img {
 // ########################
 
 .skills-card {
+  max-width: 536px;
+  margin: 0 auto;
   padding: 16px;
   border-radius: .5em;
   background-color: white;
@@ -545,21 +547,38 @@ img {
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch; // iOS
+    padding-bottom: 16px;
+
+    // scrollbar https://css-tricks.com/custom-scrollbars-in-webkit/
+    &::-webkit-scrollbar {
+      height: 4px;
+      -webkit-appearance: none;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $main-color; 
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: transparentize($main-color, 0.8); 
+    }
   }
 
   .tool-belt {
-    width: 1600px;
+    width: 1200px;
   }
 
   .tool {
     margin: 0 8px;
-    width: 120px;
+    width: 88px;
     display: inline-block;
     &:first-child {
       margin-left: 0;
     }
   }
   @media screen and (min-width: 768px) {
+    .tool-belt-window {
+      padding: 0;
+    }
     .tool-belt {
       width: auto;
       text-align: center;
@@ -574,6 +593,12 @@ img {
 // contact
 // ########################
 #contact {
+  h6{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+  }
   a {
     display: block;
     text-align: center;
@@ -603,8 +628,34 @@ img {
 // ########################
 
 footer {
+  .row {
+    margin-bottom: 0;
+  }
+  text-align: center;
   padding: 16px 0;
   background-color: $dark-gray;
-  height: 96px;
+  min-height: 96px;
   color: white;
+  .social-links {
+    padding: 24px 0;
+    a {
+      display: inline-block;
+      width: 24px;
+      margin-left: 8px;
+      vertical-align: middle;
+      svg path { transition: all 200ms ease-in-out; }
+      &:hover {
+        svg path {
+          fill: lighten($dark-gray, 50%);
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 400px){
+    text-align: left;
+    .social-links {
+      float: right;
+      padding-top: 0;
+    }
+  }
 }
