@@ -9,8 +9,29 @@ $(function(){
 
   // mobile menu toggle
   $('.mobile-menu').on('click', function() {
-    $(this).toggleClass('menu-close');
+    $(this).toggleClass('menu-close'); // animate to an 'x'
     $('.nav-body').toggleClass('open');
+  });
+
+  // link was clicked - dismiss menu
+  $('.nav-links a').on('click', function(e){
+    const self = $(this);
+    const $href = $(e.target).attr('href');
+    // console.log($href.indexOf('#'));
+
+    // check the href for id anchor - '#' 
+    if ($href.indexOf('#') !== -1 ) {
+      e.preventDefault();
+      
+      if ($('.nav-body').hasClass('open')){
+        $('.nav-body').removeClass('open');
+      }
+      // scroll to section
+      $('html, body').animate({
+        scrollTop: $(self.attr('href')).offset().top - 56
+      }, 1000);
+    }
+
   });
 
   //check scroll pos of menu bar and stick it
