@@ -31,27 +31,12 @@ $(function(){
 
   });
 
-  // function toolbeltWidth(){
-
-  // }
-
-  // const tools = document.querySelectorAll('.tool');
-  // const toolsWidth = Array.prototype.map.call(tools, el => {
-  //         return el.offsetWidth + 16;
-  //       }).reduce((total, x) => total + x, 0)
-
-  // console.log(tools, toolsWidth);
-
   //check scroll pos of menu bar and stick it
   $(window).scroll(function() {
     const $navBar = $('#nav-bar') // grab nav-bar
     , $spacer = $('.nav-bar__spacer') // grab spacer
     , heroht = $('#top').height() // calc height of hero
     , wScroll = $(this).scrollTop(); // calc scoll distance
-
-    // if ($navbar.hasClass('isFixed')) {
-    //   $navBar.removeClass('isFixed');
-    // }
 
     if (heroht <= wScroll) {
       $navBar.addClass('isFixed');
@@ -71,5 +56,16 @@ $(function(){
   }
 
   $('#year').text(getYear());
+
+  // function toolbeltWidth(){
+
+  // }
+
+  // const tools = document.querySelectorAll('.tool');
+  // const toolsWidth = Array.prototype.map.call(tools, el => {
+  //         return el.offsetWidth + 16;
+  //       }).reduce((total, x) => total + x, 0)
+
+  // console.log(tools, toolsWidth);
 
 }());

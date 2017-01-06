@@ -5,4 +5,13 @@
 @import "colors";
 @import "fonts";
 
+// import base and section styles
 @import "styles";
+@import "partials/hero";
+@import "partials/nav";
+@import "partials/about";
+@import "partials/skills";
+@import "partials/work";
+@import "partials/tools";
+@import "partials/contact";
+@import "partials/footer";

@@ -1,0 +1,59 @@
+// tech & tools section
+#tools {
+  // position: relative;
+  // z-index: 2;
+  .row .mobile-full {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    @media screen and (min-width: 400px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .tool-belt-window {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; // iOS
+    padding-bottom: 16px;
+
+    // scrollbar https://css-tricks.com/custom-scrollbars-in-webkit/
+    &::-webkit-scrollbar {
+      height: 4px;
+      -webkit-appearance: none;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $main-color; 
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: transparentize($main-color, 0.8); 
+    }
+  }
+
+  .tool-belt {
+    width: 1200px;
+  }
+
+  .tool {
+    margin: 0 8px;
+    width: 88px;
+    display: inline-block;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .tool-belt-window {
+      padding: 0;
+    }
+    .tool-belt {
+      width: auto;
+      text-align: center;
+    }
+    .tool {
+      margin: 8px 16px 24px;
+    }
+  }
+}

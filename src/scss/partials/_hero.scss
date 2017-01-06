@@ -1,0 +1,50 @@
+// hero partial
+.hero {
+  position: relative;
+  height: calc(100vh - 56px);
+  background: {
+    color: white;
+    image: url('../images/utah.jpg');
+    size: cover;
+    position: center center;
+  }
+  filter: saturate(120%);
+  overflow: hidden;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: {
+      color: transparentize(#4d4d4d, 0.3);
+    }
+  }
+}
+
+#my-name {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  h1, h3 {
+    font-family: 'Biryani', Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    font-size: 8vw;
+    margin: 0;
+  }
+  h3 {
+    font-size: 5vw;
+    margin: 0;
+  }
+  .caption{
+    padding-top: 12px;
+  }
+}
