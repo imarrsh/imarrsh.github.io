@@ -17,6 +17,7 @@
     "browserify": "^13.1.1",
     "browserify-shim": "^3.8.12",
     "concurrently": "^3.1.0",
+    "eslint": "^3.12.2",
     "ga-browser": "^1.0.0",
     "git-directory-deploy": "^1.5.1",
     "handlebars": "^4.0.6",
@@ -83,6 +84,12 @@
       ".hbs",
       "json"
     ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
   },
   "dependencies": {}
 }
