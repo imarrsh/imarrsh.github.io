@@ -1,14 +1,5 @@
 // google analytics module
 
-// original tracking code
-// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-// })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-// ga('create', 'UA-88987609-1', 'auto');
-// ga('send', 'pageview');
-
 const analytics = require('ga-browser')();
 
 const location = window.location.pathname
@@ -31,14 +22,23 @@ analytics('send', 'pageview', {
 const trackOutboundLink = function(e) {
   e.preventDefault();
   const url = e.currentTarget.href;
-
-   ga('send', 'event', 'outbound', 'click', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-   });
+  // send tracking data
+  ga('send', 'event', 'outbound', 'click', url, {
+    'transport': 'beacon',
+    'hitCallback': function(){window.location = url;}
+  });
 }
 
-// collect outbound links
-const outboundLinks = document.querySelectorAll('a[href^="http"]');
-// console.log(outboundLinks);
-outboundLinks.forEach(link => link.addEventListener('click', trackOutboundLink) );
+// collect outbound links if ga successfully loads
+const collectOutboundLinks = function(){   
+  const outboundLinks = document.querySelectorAll('a[href^="http"]');
+  outboundLinks.forEach(link => link.addEventListener('click', trackOutboundLink) );
+}
+
+// on load, check for ga - if 
+window.addEventListener('load', () => {
+  if (window.ga && ga.create) {
+    collectOutboundLinks();
+  }
+})
+
