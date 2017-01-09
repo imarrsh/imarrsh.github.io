@@ -39,7 +39,7 @@ const projects = [
     },{
       "name": "Batch Maker",
       "title": "More Backbone and React!",
-      "description": "This was the last major project before diving head-first into the final project. This app features user authentication, CRUD functionality and utilizes React + Backbone to get it done.",
+      "description": "This was the last major project before diving head-first into the final project. This app features user authentication, CRUD functionality and utilizes React + Backbone to get it done. Demo it live below.",
       "liveLink": "https://imarrsh.github.io/8.4-batch-maker/",
       "codeLink": "https://github.com/imarrsh/8.4-batch-maker",
       "imageUrl" : "images/batch-maker.png"
