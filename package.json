@@ -33,12 +33,12 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "html": "cp src/*.html dist/",
+    "html": "rsync -avhW src/*.html dist/",
     "scss": "sass --style compressed --update src/scss:dist/css",
-    "fonts": "cp -r src/fonts dist/",
-    "cname": "cp CNAME dist/",
-    "video": "cp -r src/video/* dist/",
-    "downloads": "cp -r src/downloads dist/",
+    "fonts": "rsync -avhW src/fonts dist/",
+    "cname": "rsync -avhW CNAME dist/",
+    "video": "rsync -avhW src/video/* dist/",
+    "downloads": "rsync -avhW src/downloads dist/",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
     "browserify": "browserify src/js/index.js | uglifyjs > dist/js/bundle.js",
     "imagemin": "imagemin src/images/* --out-dir=dist/images/",
