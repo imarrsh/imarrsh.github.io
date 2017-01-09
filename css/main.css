@@ -1873,6 +1873,11 @@ img {
   #work figure {
     margin-left: 0;
     margin-right: 0; }
+  #work .btn__action {
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 0 5px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
   #work .sample {
     position: relative;
     width: 100%;
