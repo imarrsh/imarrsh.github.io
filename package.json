@@ -4,7 +4,7 @@
   "description": "My Personal Portfolio Site",
   "main": "index.html",
   "repository": "https://github.com/imarrsh/imarrsh.github.io",
-  "author": "Marshall Thompson <marshallthmomp@gmail.com>",
+  "author": "Marshall Thompson <marshallthomp@gmail.com>",
   "license": "MIT",
   "private": true,
   "devDependencies": {
